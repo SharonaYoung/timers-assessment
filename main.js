@@ -18,15 +18,14 @@ buttonEl.addEventListener('click', () => {
   let intId = setInterval(() => {  
     h1El.textContent = `Time remaining: ${timer}`;
     const timeUp = document.createElement('p');
-    if(timer === 0){
-      clearInterval(intId);
-      timeUp.innerText = `You lose! The secret letter was ${secretLetter}.`;
-      document.body.appendChild(timeUp);
-    } else if(keyPressed === secretLetter){
-      console.log("Match");
+    if(keyPressed === secretLetter){
       clearInterval(intId);
       timeUp.innerText = `Congratulations! You matched the secret letter, ${secretLetter}.`;
       body.appendChild(timeUp);
+    }else if(timer === 0){
+      clearInterval(intId);
+      timeUp.innerText = `You lose! The secret letter was ${secretLetter}.`;
+      document.body.appendChild(timeUp);
     }
     timer--;
   }, 1000)
