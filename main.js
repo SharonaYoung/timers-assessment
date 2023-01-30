@@ -11,7 +11,10 @@ body.addEventListener('keydown', function(event){
 
 // timer setup
 let timer = 10;
+const guess = document.createElement('p');
+  guess.innerText = "Guess the secret letter before time runs out..."
 buttonEl.addEventListener('click', () => {
+  body.appendChild(guess);
   let intId = setInterval(() => {  
     h1El.textContent = `Time remaining: ${timer}`;
     const timeUp = document.createElement('p');

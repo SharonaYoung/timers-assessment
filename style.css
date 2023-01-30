@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+}
+button{
+  background: #835d68;
+  color: #efefef;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  width: 15rem;
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: 4px 4px 15px 2px #a7a7a7;
+}
+p{
+  font-size: 1.5rem;
+}
+img{
+  max-width: 50%;
+}
