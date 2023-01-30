@@ -17,7 +17,7 @@ buttonEl.addEventListener('click', () => {
     const timeUp = document.createElement('p');
     if(timer === 0){
       clearInterval(intId);
-      timeUp.innerText = "Time's up, you lost";
+      timeUp.innerText = `You lose! The secret letter was ${secretLetter}.`;
       document.body.appendChild(timeUp);
     } else if(keyPressed === secretLetter){
       console.log("Match");
@@ -41,3 +41,8 @@ const randomLetter = () => {
 }
 
 // image popup after 20s
+const image = document.createElement('img');
+image.src = "cat.jpg"
+setTimeout(() => {
+  body.appendChild(image);
+}, 20000);
