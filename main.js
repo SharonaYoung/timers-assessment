@@ -3,28 +3,41 @@ const body = document.querySelector('body');
 const buttonEl = document.querySelector('button');
 const h1El = document.querySelector('h1');
 
+// key pressed
+let keyPressed;
+body.addEventListener('keydown', function(event){
+  keyPressed= event.key;
+});
 
 // timer setup
 let timer = 10;
 buttonEl.addEventListener('click', () => {
-  console.log("button clicked");
   let intId = setInterval(() => {  
     h1El.textContent = `Time remaining: ${timer}`;
+    const timeUp = document.createElement('p');
     if(timer === 0){
       clearInterval(intId);
-      const timeUp = document.createElement('p');
       timeUp.innerText = "Time's up, you lost";
       document.body.appendChild(timeUp);
+    } else if(keyPressed === secretLetter){
+      console.log("Match");
+      clearInterval(intId);
+      timeUp.innerText = `Congratulations! You matched the secret letter, ${secretLetter}.`;
+      body.appendChild(timeUp);
     }
     timer--;
   }, 1000)
+  randomLetter();
 });
 
-
 // choose a random letter
+// make an array of alphabet
+let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-// record user keyboard event
-
-// if statement for if user selects correct letter
+let secretLetter = '';
+const randomLetter = () => {
+  secretLetter = letters[Math.floor(Math.random() * 26)]
+  console.log(secretLetter);
+}
 
 // image popup after 20s
