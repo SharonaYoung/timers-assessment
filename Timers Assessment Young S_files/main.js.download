@@ -3,6 +3,8 @@ const body = document.querySelector('body');
 const buttonEl = document.querySelector('button');
 const h1El = document.querySelector('h1');
 
+
+
 // timer setup
 let timer = 10;
 const guess = document.createElement('p');
