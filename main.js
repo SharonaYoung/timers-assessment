@@ -3,16 +3,17 @@ const body = document.querySelector('body');
 const buttonEl = document.querySelector('button');
 const h1El = document.querySelector('h1');
 
+// key pressed
+let keyPressed;
+body.addEventListener('keydown', function(event){
+  keyPressed= event.key;
+});
+
 // timer setup
 let timer = 10;
 const guess = document.createElement('p');
   guess.innerText = "Guess the secret letter before time runs out..."
 buttonEl.addEventListener('click', () => {
-  // key pressed
-let keyPressed;
-body.addEventListener('keydown', function(event){
-  keyPressed= event.key;
-});
   body.appendChild(guess);
   let intId = setInterval(() => {  
     h1El.textContent = `Time remaining: ${timer}`;
